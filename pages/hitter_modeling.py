@@ -9,7 +9,7 @@ import seaborn as sns
 
 st.set_page_config(layout="wide")
 empty1,col1,col3,col4=st.columns([0.3,1.0,1.0,1.0])
-data=r'C:\Users\user\Desktop\mid_project_st\data\hitter_salary_debut.csv'
+data=r'./data/hitter_salary_debut.csv'
 data=pd.read_csv(data)
 def run_ml_app():
     st.title("🏏타자 예측 페이지")
