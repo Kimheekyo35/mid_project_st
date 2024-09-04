@@ -13,14 +13,13 @@ empty1,col1,col3=st.columns([0.3,1.0,1.0])
 data=r'./data/hitter_final2.csv'
 data=pd.read_csv(data)
 palette=sns.color_palette("BuGn")
-plt.rcParams['font.family'] = 'Arial'
 
 
 
 def run_ml_app():
     st.title("🏏타자 예측 페이지")
     
-    
+
     col1,col3=st.columns(2)
     
     with col1:
@@ -55,6 +54,8 @@ def run_ml_app():
         st.write(prediction)
         
        
+        plt.rcParams['font.family'] = 'DejaVu Sans'
+
         if prediction==0:
             st.success('연봉구간이 하위 25%에 속합니다.')
             
