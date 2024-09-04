@@ -4,14 +4,16 @@ import joblib
 import os
 import numpy as np
 from pyparsing import empty
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 st.set_page_config(layout="wide")
-empty1,col1,col3=st.columns([0.3,1.0,1.0])
+empty1,col1,col3,col4=st.columns([0.3,1.0,1.0,1.0])
 
 def run_ml_app():
     st.title("🏏타자 예측 페이지")
     
-    col1,col3=st.columns(2)
+    col1,col3,col4=st.columns(3)
     
     with col1:
         st.subheader("H, OBP, HBP, OPS")
@@ -45,10 +47,12 @@ def run_ml_app():
         #예측값 출력 탭
         prediction=model.predict(new_df)
         st.write(prediction)
-
+        plt.figure(1,1,figsize=(5,5))
+        sns.countplot(x=prediction)
+        
         if prediction==0:
             st.success("연봉이 4500만원 미만입니다.")
-        
+            
         elif prediction==1:
             st.success("연봉이 4500만원 이상 9000만원 미만입니다.")
 
