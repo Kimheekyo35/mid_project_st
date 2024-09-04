@@ -14,7 +14,11 @@ data=r'./data/hitter_final2.csv'
 data=pd.read_csv(data)
 palette=sns.color_palette("BuGn")
 
-st.markdown(
+
+
+def run_ml_app():
+    st.title("🏏타자 예측 페이지")
+    st.markdown(
     """
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
@@ -26,9 +30,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-def run_ml_app():
-    st.title("🏏타자 예측 페이지")
     
     col1,col3=st.columns(2)
     
