@@ -102,13 +102,13 @@ def run_ml_app():
         st.write(prediction)
 
         if prediction==0:
-            st.success('연봉이 8150만원 미만입니다.')
+            st.success('연봉구간이 하위 25%에 속합니다.')
         elif prediction==1:
-            st.success('연봉이 8150만원 이상 14250만원 미만입니다.')
+            st.success('연봉구간이 하위 25%와 하위 50%에 속합니다.')
         elif prediction==2:
-            st.success('연봉이 14250만원 이상 26125만원 미만입니다.')
+            st.success('연봉구간이 상위 50%와 상위 75%에 속합니다.')
         else:
-            st.success('연봉이 26125만원 이상입니다.')
+            st.success('연봉구간이 상위 75% 이상에 속합니다.')
 
 run_ml_app()
 
