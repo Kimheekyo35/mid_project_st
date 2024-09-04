@@ -60,6 +60,11 @@ def run_ml_app():
         else:
             st.success("연봉이 3억 이상입니다.")
 
+    with col4:
+        fig=plt.figure()
+        sns.countplot(x='연봉구간',data=data)
+        st.pyplot(fig)
+
          
     
 run_ml_app()
