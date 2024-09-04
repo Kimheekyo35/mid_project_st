@@ -9,7 +9,8 @@ import seaborn as sns
 
 st.set_page_config(layout="wide")
 empty1,col1,col3,col4=st.columns([0.3,1.0,1.0,1.0])
-
+data=r'C:\Users\user\Desktop\mid_project_st\data\hitter_salary_debut.csv'
+data=pd.read_csv(data)
 def run_ml_app():
     st.title("🏏타자 예측 페이지")
     
@@ -47,19 +48,23 @@ def run_ml_app():
         #예측값 출력 탭
         prediction=model.predict(new_df)
         st.write(prediction)
-        plt.figure(1,1,figsize=(5,5))
-        sns.countplot(x=prediction)
+        
         
         if prediction==0:
             st.success("연봉이 4500만원 미만입니다.")
             
         elif prediction==1:
             st.success("연봉이 4500만원 이상 9000만원 미만입니다.")
-
+        
         elif prediction==2:
             st.success("연봉이 9000만원 이상 3억 미만입니다.")
-        
+          
         else:
             st.success("연봉이 3억 이상입니다.")
+    with col4:
+        fig=plt.figure(1,1,figsize=(5,5))
+        sns.countplot(x="연봉구간",data=data)
+        st.pyplot(fig)
+         
     
 run_ml_app()
