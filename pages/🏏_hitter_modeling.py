@@ -9,8 +9,9 @@ import seaborn as sns
 
 st.set_page_config(layout="wide")
 empty1,col1,col3=st.columns([0.3,1.0,1.0])
-data=r'./data/hitter_salary_debut.csv'
+data=r'./data/hitter_final2.csv'
 data=pd.read_csv(data)
+palette=sns.color_palette("BuGn")
 def run_ml_app():
     st.title("🏏타자 예측 페이지")
     
@@ -51,16 +52,25 @@ def run_ml_app():
         if prediction==0:
             st.success("연봉이 4500만원 미만입니다.")
             fig=plt.figure()
-            sns.countplot(x='연봉(만원)',data=data)
+            sns.countplot(x='연봉(만원)',data=data,palette={'0':palette[5],'1':palette[1],'2':palette[1],'3':palette[1]})
             st.pyplot(fig)
         elif prediction==1:
             st.success("연봉이 4500만원 이상 9000만원 미만입니다.")
+            fig=plt.figure()
+            sns.countplot(x='연봉(만원)',data=data,palette={'0':palette[1],'1':palette[5],'2':palette[1],'3':palette[1]})
+            st.pyplot(fig)
         
         elif prediction==2:
             st.success("연봉이 9000만원 이상 3억 미만입니다.")
+            fig=plt.figure()
+            sns.countplot(x='연봉(만원)',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[5],'3':palette[1]})
+            st.pyplot(fig)
           
         else:
             st.success("연봉이 3억 이상입니다.")
+            fig=plt.figure()
+            sns.countplot(x='연봉(만원)',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[1],'3':palette[5]})
+            st.pyplot(fig)
 
     
         
