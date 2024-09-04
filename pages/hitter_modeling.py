@@ -62,7 +62,7 @@ def run_ml_app():
 
     with col4:
         fig=plt.figure()
-        sns.countplot(x='연봉구간',data=data)
+        sns.countplot(x='연봉(만원)',data=data)
         st.pyplot(fig)
 
          
