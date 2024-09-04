@@ -109,30 +109,24 @@ def run_ml_app():
         prediction=model.predict(xgb_matrix)
         st.write(prediction)
 
+        fig=plt.figure()
+        plt.xlabel('Salary')
         if prediction==0:
             st.success('연봉구간이 하위 25%에 속합니다.')
-            
-            fig=plt.figure()
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[5],'1':palette[1],'2':palette[1],'3':palette[1]})
             st.pyplot(fig)
         elif prediction==1:
             st.success('연봉구간이 하위 25%와 하위 50%에 속합니다.')
-            fig=plt.figure()
-            plt.xlabel('Salary')
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[5],'2':palette[1],'3':palette[1]})
             st.pyplot(fig)
         
         elif prediction==2:
             st.success('연봉구간이 상위 50%와 상위 75%에 속합니다.')
-            fig=plt.figure()
-            plt.xlabel('Salary')
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[5],'3':palette[1]})
             st.pyplot(fig)
           
         else:
             st.success('연봉구간이 상위 75% 이상에 속합니다.')
-            fig=plt.figure()
-            plt.xlabel('Salary')
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[1],'3':palette[5]})
             st.pyplot(fig)
 run_ml_app()
