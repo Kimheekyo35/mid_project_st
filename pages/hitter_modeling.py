@@ -8,13 +8,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 st.set_page_config(layout="wide")
-empty1,col1,col3,col4=st.columns([0.3,1.0,1.0,1.0])
+empty1,col1,col3=st.columns([0.3,1.0,1.0])
 data=r'./data/hitter_salary_debut.csv'
 data=pd.read_csv(data)
 def run_ml_app():
     st.title("🏏타자 예측 페이지")
     
-    col1,col3,col4=st.columns(3)
+    col1,col3=st.columns(2)
     
     with col1:
         st.subheader("H, OBP, HBP, OPS")
@@ -60,7 +60,7 @@ def run_ml_app():
         else:
             st.success("연봉이 3억 이상입니다.")
 
-    with col4:
+    with st.container():
         fig=plt.figure()
         sns.countplot(x='연봉(만원)',data=data)
         st.pyplot(fig)
