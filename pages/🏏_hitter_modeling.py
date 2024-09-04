@@ -63,7 +63,7 @@ def run_ml_app():
         prediction=model.predict(new_df)
         st.write(prediction)
         
-        fontRegistered()
+       
         if prediction==0:
             st.success('연봉구간이 하위 25%에 속합니다.')
             
