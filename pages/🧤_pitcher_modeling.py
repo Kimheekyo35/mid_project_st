@@ -23,14 +23,13 @@ def run_ml_app():
     col1,col3=st.columns(2)
 
     with col1:
-        st.subheader("ERA, QS_G, SO, WAR_x")
-        st.subheader("W, IP, K_BB, exp_QS, SO_G")
-        st.subheader("QS, NP, RA_9, 연차, TBF, 현재연봉")
-        st.subheader(" WHIP, K-BB, NP/IP 을 입력하세요")
+        st.subheader("ERA, R, QS, G, SO, WAR_x")
+        st.subheader("W, IP, BB, NP, 연차")
+        st.subheader("TBF, 현재연봉, WHIP 을 입력하세요")
 
 
-        ERA_value=st.number_input('ERA 값',1.30,11.00)
-        R_value=st.number_input('R값',0,200)
+        ERA_value=st.number_input('평균자책점',1.30,11.00)
+        R_value=st.number_input('',0,200)
         QS_value=st.number_input('QS 값',0,100)
         G_value=st.number_input('G 값',8,100)
         SO_value=st.number_input('SO 값',14, 230)
@@ -43,7 +42,7 @@ def run_ml_app():
         TBF_value=st.number_input('TBF 값',140,1000)
         salary_value=st.number_input('현재 연봉',2000,1000000)
         WHIP_vlaue=st.number_input('WHIP 값',0.50,2.50)
-        
+
         RA_9_value = R_value / IP_value * 9
         SO_G_value = SO_value / G_value
         QS_G_value = QS_value / G_value
