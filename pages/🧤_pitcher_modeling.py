@@ -7,12 +7,14 @@ from pyparsing import empty
 import xgboost as xgb
 import matplotlib.pyplot as plt
 import seaborn as sns
+import matplotlib.font_manager as fm
 
 data=r'./data/pitcher_data.csv'
 data=pd.read_csv(data)
 st.set_page_config(layout="wide")
 empty1,col1,col3=st.columns([0.3,1.0,1.0])
 palette=sns.color_palette("BuGn")
+plt.rcParams['font.family'] = 'Arial'
 
 
 def append_input(value):
@@ -118,7 +120,6 @@ def run_ml_app():
             st.success('연봉구간이 하위 25%와 하위 50%에 속합니다.')
             fig=plt.figure()
             plt.xlabel('Salary')
-            
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[5],'2':palette[1],'3':palette[1]})
             st.pyplot(fig)
         
@@ -126,7 +127,6 @@ def run_ml_app():
             st.success('연봉구간이 상위 50%와 상위 75%에 속합니다.')
             fig=plt.figure()
             plt.xlabel('Salary')
-            
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[5],'3':palette[1]})
             st.pyplot(fig)
           
@@ -134,7 +134,6 @@ def run_ml_app():
             st.success('연봉구간이 상위 75% 이상에 속합니다.')
             fig=plt.figure()
             plt.xlabel('Salary')
-            
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[1],'3':palette[5]})
             st.pyplot(fig)
 run_ml_app()

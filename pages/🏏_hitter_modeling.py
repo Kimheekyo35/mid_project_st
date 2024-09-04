@@ -13,6 +13,7 @@ empty1,col1,col3=st.columns([0.3,1.0,1.0])
 data=r'./data/hitter_final2.csv'
 data=pd.read_csv(data)
 palette=sns.color_palette("BuGn")
+plt.rcParams['font.family'] = 'Arial'
 
 
 
