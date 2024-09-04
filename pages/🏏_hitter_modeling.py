@@ -18,18 +18,7 @@ palette=sns.color_palette("BuGn")
 
 def run_ml_app():
     st.title("🏏타자 예측 페이지")
-    st.markdown(
-    """
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-
-    html, body, [class*="css"]  {
-        font-family: 'Nanum Gothic', sans-serif;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+    
     
     col1,col3=st.columns(2)
     
@@ -69,22 +58,26 @@ def run_ml_app():
             st.success('연봉구간이 하위 25%에 속합니다.')
             
             fig=plt.figure()
+            plt.xlabel('Salary')
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[5],'1':palette[1],'2':palette[1],'3':palette[1]})
             st.pyplot(fig)
         elif prediction==1:
             st.success('연봉구간이 하위 25%와 하위 50%에 속합니다.')
+            plt.xlabel('Salary')
             fig=plt.figure()
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[5],'2':palette[1],'3':palette[1]})
             st.pyplot(fig)
         
         elif prediction==2:
             st.success('연봉구간이 상위 50%와 상위 75%에 속합니다.')
+            plt.xlabel('Salary')
             fig=plt.figure()
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[5],'3':palette[1]})
             st.pyplot(fig)
           
         else:
             st.success('연봉구간이 상위 75% 이상에 속합니다.')
+            plt.xlabel('Salary')
             fig=plt.figure()
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[1],'3':palette[5]})
             st.pyplot(fig)
