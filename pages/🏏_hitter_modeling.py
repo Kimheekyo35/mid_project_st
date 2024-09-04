@@ -13,14 +13,19 @@ empty1,col1,col3=st.columns([0.3,1.0,1.0])
 data=r'./data/hitter_final2.csv'
 data=pd.read_csv(data)
 palette=sns.color_palette("BuGn")
-@st.cache_data
-def fontRegistered():
-    font_dirs = [os.getcwd() + '/customFonts']
-    font_files = fm.findSystemFonts(fontpaths=font_dirs)
 
-    for font_file in font_files:
-        fm.fontManager.addfont(font_file)
-    fm._load_fontmanager(try_read_cache=False)
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+    html, body, [class*="css"]  {
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 def run_ml_app():
     st.title("🏏타자 예측 페이지")
