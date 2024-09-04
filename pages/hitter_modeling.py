@@ -50,7 +50,9 @@ def run_ml_app():
         
         if prediction==0:
             st.success("연봉이 4500만원 미만입니다.")
-            
+            fig=plt.figure()
+            sns.countplot(x='연봉(만원)',data=data)
+            st.pyplot(fig)
         elif prediction==1:
             st.success("연봉이 4500만원 이상 9000만원 미만입니다.")
         
@@ -60,10 +62,8 @@ def run_ml_app():
         else:
             st.success("연봉이 3억 이상입니다.")
 
-    with st.container():
-        fig=plt.figure()
-        sns.countplot(x='연봉(만원)',data=data)
-        st.pyplot(fig)
+    
+        
 
          
     
