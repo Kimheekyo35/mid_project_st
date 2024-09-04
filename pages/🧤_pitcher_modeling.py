@@ -123,7 +123,6 @@ def run_ml_app():
             st.success('연봉구간이 하위 25%에 속합니다.')
             
             fig=plt.figure()
-            plt.xlabel('Salary')
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[5],'1':palette[1],'2':palette[1],'3':palette[1]})
             st.pyplot(fig)
         elif prediction==1:
