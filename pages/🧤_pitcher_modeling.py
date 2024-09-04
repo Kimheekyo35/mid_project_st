@@ -8,6 +8,8 @@ import xgboost as xgb
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.font_manager as fm
+from matplotlib import rc
+import platform
 
 data=r'./data/pitcher_data.csv'
 data=pd.read_csv(data)
@@ -16,6 +18,14 @@ empty1,col1,col3=st.columns([0.3,1.0,1.0])
 palette=sns.color_palette("BuGn")
 plt.rcParams['font.family'] = 'Arial'
 
+if platform.system() == 'Windows':
+    rc('font', family='Malgun Gothic')
+elif platform.system() == 'Darwin': # Mac
+    rc('font', family='AppleGothic')
+else: #linux
+    rc('font', family='NanumGothic')
+
+plt.rcParams['axes.unicode_minus'] = False
 
 def append_input(value):
     st.session_state.input+=str(value)
