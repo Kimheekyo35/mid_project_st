@@ -36,7 +36,7 @@ def run_ml_app():
     
     with col3:
 
-        st.subheader("⚾ 예측값 확인하기!")
+        st.subheader("               ⚾ 예측값 확인하기!")
         
 
         #모델 불러오기
