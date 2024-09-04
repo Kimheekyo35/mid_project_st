@@ -29,19 +29,19 @@ def run_ml_app():
 
 
         ERA_value=st.number_input('평균자책점',1.30,11.00)
-        R_value=st.number_input('',0,200)
-        QS_value=st.number_input('QS 값',0,100)
-        G_value=st.number_input('G 값',8,100)
-        SO_value=st.number_input('SO 값',14, 230)
-        WAR_x_value=st.number_input('WAR_X 값',-1.10,8.50 )
-        W_value=st.number_input('W 값',0,20)
-        IP_value=st.number_input('IP 값',30.0,210.0)
-        BB_value=st.number_input('BB 값',6,100)
-        NP_value=st.number_input('NP 값',500,4000)
+        R_value=st.number_input('실점',0,200)
+        QS_value=st.number_input('퀄리티 스타트(QS) 값',0,100)
+        G_value=st.number_input('경기수 값',8,100)
+        SO_value=st.number_input('삼진 값',14, 230)
+        WAR_x_value=st.number_input('선수 대비 승리 기여도(WAR_x) 값',-1.10,8.50 )
+        W_value=st.number_input('승리 값',0,20)
+        IP_value=st.number_input('이닝 값',30.0,210.0)
+        BB_value=st.number_input('볼넷 값',6,100)
+        NP_value=st.number_input('투구수(NP) 값',500,4000)
         career_value=st.number_input('연차',1,100)
-        TBF_value=st.number_input('TBF 값',140,1000)
+        TBF_value=st.number_input('상대 타자 수(TBF) 값',140,1000)
         salary_value=st.number_input('현재 연봉',2000,1000000)
-        WHIP_vlaue=st.number_input('WHIP 값',0.50,2.50)
+        WHIP_vlaue=st.number_input('이닝당 출루 허용률(WHIP) 값',0.50,2.50)
 
         RA_9_value = R_value / IP_value * 9
         SO_G_value = SO_value / G_value
