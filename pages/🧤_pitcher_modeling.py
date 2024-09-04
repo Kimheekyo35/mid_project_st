@@ -23,7 +23,8 @@ def run_ml_app():
     col1,col3=st.columns(2)
 
     with col1:
-        st.subheader("평균자책점, 실점, 퀄리티 스타트(QS), 경기수, 삼진, 선수 대비 승리 기여도(WAR_x), 승리, 이닝, 볼넷, 투구수(NP), 연차, 상대 타자 수(TBF), 현재 연봉, 이니당 출루 허용률(WHIP)")
+        st.subheader("평균자책점, 실점, 퀄리티 스타트(QS), 경기수, 삼진, 선수 대비 승리 기여도(WAR_x)")
+        st.subheader("승리, 이닝, 볼넷, 투구수(NP), 연차, 상대 타자 수(TBF), 현재 연봉, 이니당 출루 허용률(WHIP)")
         st.subheader("을 입력하세요")
 
 
@@ -110,6 +111,7 @@ def run_ml_app():
             st.success('연봉이 26125만원 이상입니다.')
 
 run_ml_app()
+
 
         
 
