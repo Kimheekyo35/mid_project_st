@@ -5,9 +5,15 @@ import os
 import numpy as np
 from pyparsing import empty
 import xgboost as xgb
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+data=r'./data/pitcher_data.csv'
+data=pd.read_csv(data)
 st.set_page_config(layout="wide")
 empty1,col1,col3=st.columns([0.3,1.0,1.0])
+palette=sns.color_palette("BuGn")
+
 
 def append_input(value):
     st.session_state.input+=str(value)
@@ -103,13 +109,31 @@ def run_ml_app():
 
         if prediction==0:
             st.success('연봉구간이 하위 25%에 속합니다.')
+            
+            fig=plt.figure()
+            plt.xlabel('Salary')
+            sns.countplot(x='연봉구간',data=data,palette={'0':palette[5],'1':palette[1],'2':palette[1],'3':palette[1]})
+            st.pyplot(fig)
         elif prediction==1:
             st.success('연봉구간이 하위 25%와 하위 50%에 속합니다.')
+            plt.xlabel('Salary')
+            fig=plt.figure()
+            sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[5],'2':palette[1],'3':palette[1]})
+            st.pyplot(fig)
+        
         elif prediction==2:
             st.success('연봉구간이 상위 50%와 상위 75%에 속합니다.')
+            plt.xlabel('Salary')
+            fig=plt.figure()
+            sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[5],'3':palette[1]})
+            st.pyplot(fig)
+          
         else:
             st.success('연봉구간이 상위 75% 이상에 속합니다.')
-
+            plt.xlabel('Salary')
+            fig=plt.figure()
+            sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[1],'3':palette[5]})
+            st.pyplot(fig)
 run_ml_app()
 
 
