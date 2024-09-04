@@ -99,7 +99,7 @@ def run_ml_app():
     
 
         prediction=model.predict(xgb_matrix)
-        st.write(prediction)
+        
 
         if prediction==0:
             st.success('연봉이 8150만원 미만입니다.')
