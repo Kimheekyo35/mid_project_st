@@ -70,8 +70,8 @@ def run_ml_app():
         st.write(f"QS_G_value: {QS_G_value}")
         st.write(f"exp_QS_value: {exp_QS_value}")
         st.write(f"K_BB_value: {K_BB_value}")
-        st.write(f"NP_IP_value:{NP_IP_value}")
-        st.write(f"K-BB_value: {KBB_value}")
+        st.write(f"NP_IP_value:{round(NP_IP_value,2)}")
+        st.write(f"K-BB_value: {round(KBB_value,2)}")
         
 
 
