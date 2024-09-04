@@ -43,13 +43,14 @@ def run_ml_app():
         TBF_value=st.number_input('TBF 값',140,1000)
         salary_value=st.number_input('현재 연봉',2000,1000000)
         WHIP_vlaue=st.number_input('WHIP 값',0.50,2.50)
-        KBB_value=st.number_input('K-BB 값',-8.00,25.00)
-        NP_IP_value=st.number_input('NP/IP 값',10.00,25.00)
+        
         RA_9_value = R_value / IP_value * 9
         SO_G_value = SO_value / G_value
         QS_G_value = QS_value / G_value
         exp_QS_value = QS_value / G_value * QS_value
         K_BB_value = SO_value / BB_value
+        NP_IP_value=NP_value/IP_value
+        KBB_value=((SO_value/TBF_value)*100-(BB_value/TBF_value)*100)
 
     if st.button("예측시작"):
     # 필요한 모든 변수가 미리 정의되어 있는지 확인
@@ -61,6 +62,8 @@ def run_ml_app():
             QS_G_value = QS_value / G_value
             exp_QS_value = QS_value / G_value * QS_value
             K_BB_value = SO_value / BB_value
+            NP_IP_value=NP_value/IP_value
+            KBB_value=((SO_value/TBF_value)*100-(BB_value/TBF_value)*100)
 
         # 계산된 값을 출력하거나 다른 처리를 합니다.
         st.write(f"RA_9_value: {RA_9_value}")
@@ -68,6 +71,8 @@ def run_ml_app():
         st.write(f"QS_G_value: {QS_G_value}")
         st.write(f"exp_QS_value: {exp_QS_value}")
         st.write(f"K_BB_value: {K_BB_value}")
+        st.write(f"NP_IP_value:{NP_IP_value}")
+        st.write(f"K-BB_value: {KBB_value}")
         
 
 
