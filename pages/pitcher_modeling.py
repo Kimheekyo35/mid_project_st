@@ -22,23 +22,27 @@ def run_ml_app():
 
 
         ERA_value=st.number_input('ERA 값',1.30,11.00)
-        QS_G_value=st.number_input('QS_G 값',0.0,1.00)
+        R_value=st.number_input('R값',5,200)
+        QS_value=st.number_input('QS 값',0,100)
+        G_value=st.number_input('G 값',0,100)
         SO_value=st.number_input('SO 값',14, 230)
         WAR_x_value=st.number_input('WAR_X 값',-1.10,8.50 )
         W_value=st.number_input('W 값',0,20)
         IP_value=st.number_input('IP 값',30.0,210.0)
-        K_BB_value=st.number_input('K_BB 값',0.500,6.800)
-        exp_QS_value=st.number_input('exp_QS 값',0.0,20.00)
-        SO_G_value=st.number_input('SO_G 값',0.30,8.10)
+        BB_value=st.number_input('BB 값',0,100)
         QS_value=st.number_input('QS 값',0,30)
         NP_value=st.number_input('NP 값',500,4000)
-        RA_9_value=st.number_input('RA_9 값',1.000,12.00)
         career_value=st.number_input('연차',1,100)
         TBF_value=st.number_input('TBF 값',140,1000)
         salary_value=st.number_input('현재 연봉',2000,1000000)
         WHIP_vlaue=st.number_input('WHIP 값',0.50,2.50)
         KBB_value=st.number_input('K-BB 값',-8.00,25.00)
         NP_IP_value=st.number_input('NP/IP 값',10.00,25.00)
+        RA_9_value=st.write(R_value/IP_value*9)
+        SO_G_value=st.write(SO_value/G_value)
+        QS_G_value=st.write(QS_value/G_value)
+        K_BB_value=st.write(SO_value/BB_value)
+        exp_QS_value=st.write(QS_G_value*QS_value)
         sample=[ERA_value,QS_G_value,SO_value,WAR_x_value,W_value,IP_value,K_BB_value,exp_QS_value,SO_G_value,
                 QS_value,NP_value,RA_9_value,career_value,TBF_value,salary_value,
                 WHIP_vlaue,KBB_value,NP_IP_value]
