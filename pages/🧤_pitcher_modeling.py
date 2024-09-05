@@ -73,7 +73,7 @@ def run_ml_app():
             KBB_value=((SO_value/TBF_value)*100-(BB_value/TBF_value)*100)
 
         # 계산된 값을 출력하거나 다른 처리를 합니다.
-        st.write(f"RA_9_value: {RA_9_value}")
+        st.write(f"RA_9_value: {round(RA_9_value,2)}")
         st.write(f"SO_G_value: {SO_G_value}")
         st.write(f"QS_G_value: {QS_G_value}")
         st.write(f"exp_QS_value: {exp_QS_value}")
