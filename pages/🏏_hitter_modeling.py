@@ -21,9 +21,6 @@ def run_ml_app():
     
 
     col1,col3=st.columns(2)
-    '''
-    'TB', 'H', '연차', 'AB', 'RBI', 'MH', 'R', 'BB', '2B', 'IBB', 'WAR','현재연봉구간'
-    '''
     with col1:
         st.subheader("루타수(TB), 안타(H), 연차, 타수(AB), 타점(RBI), 멀티히트(MH)")
         st.subheader("득점(R), 볼넷(BB), 2루타(2B), 고의사구 (IBB), 선수 대비 승리기여도(WAR), 현재연봉구간을 입력하세요.")
@@ -39,6 +36,7 @@ def run_ml_app():
         ibb_value=st.number_input("고의사구 (IBB) 값:",0,20)
         war_value=st.number_input("선수대비 승리기여도 (WAR) 값:")
         salary_distance=st.number_input("현재연봉구간",-3.00,10.00)
+        tb_value=st.number_input("루타수 (TB) 값:",0,400)
         sample=[H_value,ab_value,rbi_value,year_value,mh_value,r_value,bb_value,salary_distance,twob_value,ibb_value,war_value]
         
     with empty1:
