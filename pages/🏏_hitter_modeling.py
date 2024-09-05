@@ -26,7 +26,7 @@ def run_ml_app():
  
         tb_value=st.number_input("루타수 (TB) 값:",0,400)
         r_value=st.number_input("득점(R) 값:",0,200)
-        H_value=st.number_input("안타 값:", 0.0,200.0)
+        H_value=st.number_input("안타 값:", 0,200)
         twob_value=st.number_input("2루타(2B) 값:",0,100)
         hr_value=st.number_input("홈런(HR) 값:",0,100)
         rbi_value=st.number_input("타점(RBI) 값:",0,200)
