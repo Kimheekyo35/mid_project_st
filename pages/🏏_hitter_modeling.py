@@ -17,6 +17,7 @@ palette=sns.color_palette("BuGn")
 
 
 def run_ml_app():
+    st.title("🏏타자 예측 페이지")  
     
     
 #'TB', 'R', 'H', '2B', 'HR',  'RBI', 'SF', 'BB', 'IBB', 'HBP', 'SLG', 'MH', 'WAR','연차','연봉(만원)'
@@ -81,8 +82,4 @@ def run_ml_app():
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[1],'3':palette[5]})
             st.pyplot(fig)
 
-    
-
-         
-st.title("🏏타자 예측 페이지")   
 run_ml_app()
