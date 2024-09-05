@@ -37,7 +37,7 @@ def run_ml_app():
         war_value=st.number_input("선수대비 승리기여도 (WAR) 값:")
         salary_distance=st.number_input("현재연봉구간",-3.00,10.00)
         tb_value=st.number_input("루타수 (TB) 값:",0,400)
-        sample=[H_value,ab_value,rbi_value,year_value,mh_value,r_value,bb_value,salary_distance,twob_value,ibb_value,war_value]
+        sample=[H_value,ab_value,rbi_value,year_value,mh_value,r_value,bb_value,salary_distance,twob_value,ibb_value,war_value,tb_value]
         
     with empty1:
         empty()
