@@ -19,7 +19,7 @@ palette=sns.color_palette("BuGn")
 def run_ml_app():
     st.title("🏏타자 예측 페이지")  
     
-    
+    col1,col3=st.columns(2)
     with col1:
         st.subheader("루타수(TB), 안타(H), 연차, 타수(AB), 타점(RBI), 멀티히트(MH)")
         st.subheader("득점(R), 볼넷(BB), 2루타(2B), 고의사구 (IBB), 선수 대비 승리기여도(WAR), 현재연봉구간을 입력하세요.")
