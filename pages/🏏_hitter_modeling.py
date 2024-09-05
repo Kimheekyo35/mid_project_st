@@ -35,8 +35,8 @@ def run_ml_app():
         ibb_value=st.number_input("고의사구 (IBB) 값:",0,20)
         hbp_value=st.number_input("사구(HBP)값:",0,30)
         slg_value=st.number_input('장타율(SLG) 값:',0.000,1.000)
-        mh_value=st.number_input("멀티히트(MH) 값:",-1.00,2.00)
-        war_value=st.number_input("선수대비 승리기여도 (WAR) 값:")
+        mh_value=st.number_input("멀티히트(MH) 값:",0,100)
+        war_value=st.number_input("선수대비 승리기여도 (WAR) 값:",-3.00,10.00)
         year_value=st.number_input("연차:",1,100)
         salary_value=st.number_input("연봉(만원):",0,30000)
         sample=[tb_value,r_value,H_value,twob_value,hr_value,rbi_value,sf_value,bb_value,ibb_value,hbp_value,slg_value,mh_value,war_value,year_value,salary_value]
