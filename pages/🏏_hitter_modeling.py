@@ -20,7 +20,7 @@ def run_ml_app():
     st.title("🏏타자 예측 페이지")  
     
     
-#'TB', 'R', 'H', '2B', 'HR',  'RBI', 'SF', 'BB', 'IBB', 'HBP', 'SLG', 'MH', 'WAR','연차','연봉(만원)'
+    #'TB', 'R', 'H', '2B', 'HR',  'RBI', 'SF', 'BB', 'IBB', 'HBP', 'SLG', 'MH', 'WAR','연차','연봉(만원)'
     with col1:
         st.subheader("루타수(TB), 안타(H), 연차, 타수(AB), 타점(RBI), 멀티히트(MH)")
         st.subheader("득점(R), 볼넷(BB), 2루타(2B), 고의사구 (IBB), 선수 대비 승리기여도(WAR), 현재연봉구간을 입력하세요.")
@@ -82,4 +82,5 @@ def run_ml_app():
             sns.countplot(x='연봉구간',data=data,palette={'0':palette[1],'1':palette[1],'2':palette[1],'3':palette[5]})
             st.pyplot(fig)
 
-run_ml_app()
+    
+    run_ml_app()
