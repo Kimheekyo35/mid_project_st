@@ -15,7 +15,7 @@ data=pd.read_csv(data)
 palette=sns.color_palette("BuGn")
 
 
-st.title("🏏타자 예측 페이지")
+
 def run_ml_app():
     
     
@@ -84,5 +84,5 @@ def run_ml_app():
     
 
          
-    
+st.title("🏏타자 예측 페이지")   
 run_ml_app()
