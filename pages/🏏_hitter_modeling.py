@@ -83,4 +83,4 @@ def run_ml_app():
             st.pyplot(fig)
 
     
-    run_ml_app()
+run_ml_app()
