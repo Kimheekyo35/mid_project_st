@@ -35,7 +35,7 @@ def run_ml_app():
         twob_value=st.number_input("2루타(2B) 값:",0,100)
         ibb_value=st.number_input("고의사구 (IBB) 값:",0,20)
         war_value=st.number_input("선수대비 승리기여도 (WAR) 값:")
-        salary_distance=st.number_input("현재연봉구간",-3.00,10.00)
+        salary_distance=st.number_input("현재연봉구간",0,3)
         tb_value=st.number_input("루타수 (TB) 값:",0,400)
         sample=[H_value,ab_value,rbi_value,year_value,mh_value,r_value,bb_value,salary_distance,twob_value,ibb_value,war_value,tb_value]
         
