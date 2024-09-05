@@ -17,7 +17,7 @@ palette=sns.color_palette("BuGn")
 
 
 def run_ml_app():
-    st.title("🏏타자 예측 페이지")  
+    st.header("🏏타자 예측 페이지")  
     
     
     with col1:
