@@ -84,10 +84,10 @@ def run_ml_app():
 
 
         
-    sample=[ERA_value,SO_value,WAR_x_value,W_value,IP_value,NP_value,career_value,TBF_value,salary_value,WHIP_vlaue,KBB_value,NP_IP_value,RA_9_value,SO_G_value,QS_G_value,exp_QS_value,K_BB_value,QS_value]
+    sample=[ERA_value,QS_G_value,SO_value,WAR_x_value,W_value,IP_value,K_BB_value,exp_QS_value,SO_G_value,QS_value,NP_value,RA_9_value,career_value,TBF_value,salary_value,WHIP_vlaue,KBB_value,NP_IP_value]
     sample=np.array(sample).reshape(1,18)
     sample=pd.DataFrame(data=sample,
-                            columns=['ERA','QS_G','SO','WAR_x','W','IP','K_BB','exp_QS','SO_G', 'QS', 'NP', 'RA_9', '연차', 'TBF', '현재연봉', 'WHIP', 'K-BB', 'NP/IP'])
+                            columns=['ERA', 'QS_G', 'SO', 'WAR_x', 'W', 'IP', 'K_BB', 'exp_QS','SO_G', 'QS', 'NP', 'RA_9', '연차', 'TBF', '현재연봉', 'WHIP', 'K-BB', 'NP/IP'])
 
     
     with empty1:
