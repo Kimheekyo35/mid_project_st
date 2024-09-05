@@ -60,7 +60,7 @@ df_hitter['현재연봉구간'] = df_hitter['연봉(만원)'].apply(assign_salar
 
 from sklearn.model_selection import train_test_split
 
-data = df_hitter[['H','OBP','HBP','OPS+','2B','BB','연차','현재연봉구간']]
+data = df_hitter[['TB', 'H', '연차', 'AB', 'RBI', 'MH', 'R', 'BB', '2B', 'IBB', 'WAR','현재연봉구간']]
 target = df_hitter['연봉구간']
 
 X_train, X_test, y_train, y_test = train_test_split(
