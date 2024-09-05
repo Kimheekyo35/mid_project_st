@@ -17,7 +17,7 @@ import matplotlib.font_manager as fm
 
 
 warnings.filterwarnings('ignore')
-hitter_data = './data/hitter_salary_stats_debut.csv'
+hitter_data = './data/htter_salary_stats_debut.csv'
 parkfactor = './data/pitcher_meanERA_parkfactor.csv'
 
 df_hitter=pd.read_csv(hitter_data)
@@ -27,7 +27,7 @@ df_hitter=pd.read_csv(hitter_data)
 
 from sklearn.model_selection import train_test_split
 
-data = df_hitter[['TB', 'R', 'H', '2B', 'HR', 'TB', 'RBI', 'SF', 'BB', 'IBB', 'HBP', 'SLG', 'MH', 'WAR','OPS+','연차','연봉(만원)']]
+data = df_hitter[['TB', 'R', 'H', '2B', 'HR',  'RBI', 'SF', 'BB', 'IBB', 'HBP', 'SLG', 'MH', 'WAR','연차','연봉(만원)']]
 target = df_hitter['연봉구간']
 
 X_train, X_test, y_train, y_test = train_test_split(

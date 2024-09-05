@@ -28,7 +28,6 @@ def run_ml_app():
         r_value=st.number_input("득점(R) 값",0,200)
         H_value=st.number_input("안타 값", 0.0,200.0)
         twob_value=st.number_input("2루타(2B) 값:",0,100)
-
         hr_value=st.number_input("홈런(HR) 값",0,100)
         rbi_value=st.number_input("타점(RBI) 값",0,200)
         sf_value=st.number_input('희생플라이(SF) 값:',0,50)
@@ -39,8 +38,8 @@ def run_ml_app():
         mh_value=st.number_input("멀티히트(MH) 값",-1.00,2.00)
         war_value=st.number_input("선수대비 승리기여도 (WAR) 값:")
         year_value=st.number_input("연차",1,100)
-        salary_distance=st.number_input("현재연봉구간",0,3)
-        sample=[tb_value,r_value,H_value,twob_value,hr_value,rbi_value,sf_value,bb_value,ibb_value,hbp_value,slg_value,mh_value,war_value,year_value,salary_distance]
+        salary_value=st.number_input("연봉(만원)",0,30000)
+        sample=[tb_value,r_value,H_value,twob_value,hr_value,rbi_value,sf_value,bb_value,ibb_value,hbp_value,slg_value,mh_value,war_value,year_value,salary_value]
         
     with empty1:
         empty()
