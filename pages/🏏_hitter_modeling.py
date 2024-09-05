@@ -15,9 +15,9 @@ data=pd.read_csv(data)
 palette=sns.color_palette("BuGn")
 
 
-
+st.title("🏏타자 예측 페이지")
 def run_ml_app():
-    st.title("🏏타자 예측 페이지")
+    
     
 #'TB', 'R', 'H', '2B', 'HR',  'RBI', 'SF', 'BB', 'IBB', 'HBP', 'SLG', 'MH', 'WAR','연차','연봉(만원)'
     with col1:
