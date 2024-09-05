@@ -19,25 +19,28 @@ palette=sns.color_palette("BuGn")
 def run_ml_app():
     st.title("🏏타자 예측 페이지")
     
-
-    col1,col3=st.columns(2)
+#'TB', 'R', 'H', '2B', 'HR',  'RBI', 'SF', 'BB', 'IBB', 'HBP', 'SLG', 'MH', 'WAR','연차','연봉(만원)'
     with col1:
         st.subheader("루타수(TB), 안타(H), 연차, 타수(AB), 타점(RBI), 멀티히트(MH)")
         st.subheader("득점(R), 볼넷(BB), 2루타(2B), 고의사구 (IBB), 선수 대비 승리기여도(WAR), 현재연봉구간을 입력하세요.")
-
-        H_value=st.number_input("안타 값", 0.0,200.0)
-        ab_value=st.number_input("타수(AB) 값",1,1000)
-        rbi_value=st.number_input("타점(RBI) 값",0,200)
-        mh_value=st.number_input("멀티히트(MH) 값",-1.00,2.00)
-        r_value=st.number_input("득점(R) 값",0,200)
-        bb_value=st.number_input("볼넷(BB) 값",0,110)
-        year_value=st.number_input("연차",1,100)
-        twob_value=st.number_input("2루타(2B) 값:",0,100)
-        ibb_value=st.number_input("고의사구 (IBB) 값:",0,20)
-        war_value=st.number_input("선수대비 승리기여도 (WAR) 값:")
-        salary_distance=st.number_input("현재연봉구간",0,3)
+ 
         tb_value=st.number_input("루타수 (TB) 값:",0,400)
-        sample=[H_value,ab_value,rbi_value,year_value,mh_value,r_value,bb_value,salary_distance,twob_value,ibb_value,war_value,tb_value]
+        r_value=st.number_input("득점(R) 값",0,200)
+        H_value=st.number_input("안타 값", 0.0,200.0)
+        twob_value=st.number_input("2루타(2B) 값:",0,100)
+
+        hr_value=st.number_input("홈런(HR) 값",0,100)
+        rbi_value=st.number_input("타점(RBI) 값",0,200)
+        sf_value=st.number_input('희생플라이(SF) 값:',0,50)
+        bb_value=st.number_input("볼넷(BB) 값",0,110)
+        ibb_value=st.number_input("고의사구 (IBB) 값:",0,20)
+        hbp_value=st.number_input("사구(HBP)값:",0,30)
+        slg_value=st.number_input('장타율(SLG) 값:',0.000,1.000)
+        mh_value=st.number_input("멀티히트(MH) 값",-1.00,2.00)
+        war_value=st.number_input("선수대비 승리기여도 (WAR) 값:")
+        year_value=st.number_input("연차",1,100)
+        salary_distance=st.number_input("현재연봉구간",0,3)
+        sample=[tb_value,r_value,H_value,twob_value,hr_value,rbi_value,sf_value,bb_value,ibb_value,hbp_value,slg_value,mh_value,war_value,year_value,salary_distance]
         
     with empty1:
         empty()
